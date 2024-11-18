@@ -1,0 +1,17 @@
+django
+
+pytest
+
+pytest-django
+
+python-dotenv
+
+psycopg2-binary 
+
+async-timeout
+
+django-redis
+
+redis
+
+click

@@ -1,0 +1,6 @@
+include README.md
+include LICENSE
+exclude tests/*
+exclude test_query_sheriff/*
+exclude .vscode/*
+exclude myenv/*
