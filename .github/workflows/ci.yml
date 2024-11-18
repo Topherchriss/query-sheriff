@@ -22,12 +22,24 @@ on:
     branches:
       - main
 
+name: CI - Query-Sheriff
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*.*.*'
+  pull_request:
+    branches:
+      - main
+
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.11, 3.12]
+        python-version: [3.8, 3.9, 3.10, 3.11, 3.12]
         django-version: ['3.2', '5.1']
     steps:
       - name: Check out code
@@ -73,7 +85,7 @@ jobs:
           flags: unittests
           name: codecov-coverage
           fail_ci_if_error: true
-  
+          
   deploy:
     if: github.ref_type == 'tag'
     runs-on: ubuntu-latest
